@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrockenITGuy | System Reboot</title>
+    <style>
+        body {
+            background-color: #0d0d0d;
+            color: #00ff41; /* Classic Hacker Green */
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .terminal-window {
+            width: 100%;
+            max-width: 600px;
+            border: 2px solid #00ff41;
+            padding: 30px;
+            box-shadow: 0 0 15px rgba(0, 255, 65, 0.2);
+            position: relative;
+        }
+
+        /* Scanline effect */
+        .terminal-window::before {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            z-index: 2;
+            background-size: 100% 2px, 3px 100%;
+            pointer-events: none;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            border-bottom: 1px dashed #00ff41;
+            padding-bottom: 15px;
+            margin-top: 0;
+        }
+
+        .log-entry {
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .highlight {
+            background-color: #00ff41;
+            color: #0d0d0d;
+            padding: 0 4px;
+            font-weight: bold;
+        }
+
+        .status {
+            color: #ffff00; /* Yellow for warnings */
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            height: 18px;
+            background-color: #00ff41;
+            animation: blink 1s infinite;
+            vertical-align: middle;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        .social-links {
+            margin-top: 30px;
+            border-top: 1px dashed #00ff41;
+            padding-top: 20px;
+        }
+
+        a {
+            color: #00ff41;
+            text-decoration: none;
+            border: 1px solid #00ff41;
+            padding: 8px 12px;
+            margin-right: 10px;
+            display: inline-block;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #00ff41;
+            color: #0d0d0d;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="terminal-window">
+        <h1>> ./BrockenITGuy.exe --reboot</h1>
+        
+        <div class="log-entry">
+            <span class="status">[SYSTEM ALERT]</span> CRITICAL FAILURE DETECTED.
+        </div>
+        <div class="log-entry">
+            > Initiating emergency protocols...
+        </div>
+        <div class="log-entry">
+            > User 'BrockenITGuy' is currently offline for critical maintenance.
+        </div>
+        
+        <br>
+        
+        <div class="log-entry">
+            <strong>CURRENT TASKS:</strong><br>
+            [Loading] Physical_Health.dll... 34%<br>
+            [Loading] Career_Reboot.exe... 12%<br>
+            [Loading] Family_Network_Config... PENDING
+        </div>
+
+        <br>
+
+        <div class="log-entry">
+            > This site is a log of my total system restore. <br>
+            > Dealing with life, health, and tech.
+        </div>
+
+        <div class="log-entry">
+            > System coming back online soon...<span class="cursor"></span>
+        </div>
+
+        <div class="social-links">
+            <div style="margin-bottom: 10px;">> FOLLOW THE LOGS:</div>
+            <a href="#" target="_blank">YOUTUBE</a>
+            <a href="#" target="_blank">TIKTOK</a>
+            <a href="#" target="_blank">EMAIL</a>
+        </div>
+    </div>
+
+</body>
+</html>
