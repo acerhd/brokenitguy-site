@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrokenITGuy | System Logs</title>
+    <meta property="og:title" content="BrokenITGuy | System Logs">
+    <meta property="og:description" content="Daily engineering logs and system updates.">
+    <meta name="theme-color" content="#00A896">
+    <style>
+        :root {
+            --primary-teal: #00A896;
+            --alert-orange: #F2A900;
+            --text-cream: #F2E8D5;
+            --bg-black: #0d0d0d;
+        }
+
+        body {
+            background-color: var(--bg-black);
+            background-image: url('background.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--text-cream);
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .terminal-window {
+            background-color: rgba(10, 18, 10, 0.95);
+            padding: 40px;
+            border-radius: 5px;
+            box-shadow: 0 0 20px rgba(0, 255, 204, 0.2);
+            max-width: 800px;
+            width: 90%;
+            border: 2px solid var(--primary-teal);
+            margin-top: 50px;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        /* Scanline effect */
+        .terminal-window::before {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            z-index: 2;
+            background-size: 100% 2px, 3px 100%;
+            pointer-events: none;
+        }
+
+        .nav-bar {
+            border-bottom: 1px dashed var(--primary-teal);
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-link {
+            color: var(--primary-teal);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        .nav-link:hover { color: var(--alert-orange); }
+
+        .log-entry-container {
+            border-left: 2px solid var(--primary-teal);
+            padding-left: 20px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .log-meta { font-size: 0.8rem; color: #666; margin-bottom: 5px; }
+        .log-status-SUCCESS { color: #00ff00; }
+        .log-status-WARNING { color: var(--alert-orange); }
+        .log-status-CRITICAL { color: #ff0000; }
+
+        .log-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--text-cream);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .log-content { line-height: 1.6; margin-bottom: 10px; }
+        .log-tags { font-size: 0.8rem; color: var(--primary-teal); opacity: 0.8; }
+        
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+    </style>
+</head>
+<body>
+    <div class="terminal-window">
+        <div class="nav-bar">
+            <span>> DIR: /VAR/LOG/SYSADMIN</span>
+            <a href="index.html" class="nav-link">[ ../RETURN_ROOT ]</a>
+        </div>
+
+        <h1>> CAPTAIN'S LOG <span style="animation: blink 1s infinite;">_</span></h1>
+        
+        <div id="log-feed">
+            <div style="color: #666;">> MOUNTING FILESYSTEM...</div>
+        </div>
+    </div>
+
+    <script>
+        fetch('logs.json')
+            .then(response => response.json())
+            .then(data => {
+                const feed = document.getElementById('log-feed');
+                feed.innerHTML = ''; 
+
+                // Sort: Newest First
+                data.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+                data.forEach(entry => {
+                    const entryDiv = document.createElement('div');
+                    entryDiv.className = 'log-entry-container';
+                    entryDiv.innerHTML = `
+                        <div class="log-meta">
+                            DATE: ${entry.date} | STATUS: <span class="log-status-${entry.status}">${entry.status}</span>
+                        </div>
+                        <div class="log-title">${entry.title}</div>
+                        <div class="log-content">${entry.content}</div>
+                        <div class="log-tags">${entry.tags.join(' ')}</div>
+                    `;
+                    feed.appendChild(entryDiv);
+                });
+            })
+            .catch(error => {
+                document.getElementById('log-feed').innerHTML = '<span style="color:red;">> ERROR: /VAR/LOG NOT FOUND (404)</span>';
+            });
+    </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+Cleaning fire walls and rebuilding from the mess I created from the beginning when I got the UDM  and was learning
+
+Fixing VPN issues with 1 of the Servers in proxmox
+Having a lot of password issues for some reason with my media server
+My AI helper keeps reaching its limit even tho I pay for IT
+
+
+Working on website
+Updated site to welcome page and intro and added page for logs with automation for posting
+
+just finish some ai automating on my own
+
+Testing the new project folder location.
+
+i am tired and in a lot of pain after sitting here for so long working on this
+
+hiding secrets
+
+hello world
