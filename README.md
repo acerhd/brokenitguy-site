@@ -77,3 +77,84 @@ What it does: Makes the black box slightly transparent. How to tweak: The last n
     background-color: rgba(10, 10, 10, 0.9);
 }
 
+01/02/2025
+
+# 🛠️ The BrokenITguy Project
+
+![Status](https://img.shields.io/badge/System_Status-ONLINE-success?style=for-the-badge&logo=github)
+![Uptime](https://img.shields.io/badge/Uptime-99.9%25-blue?style=for-the-badge&logo=linux)
+![Pain Level](https://img.shields.io/badge/Pain_Level-CRITICAL-red?style=for-the-badge&logo=activitypub)
+
+**Welcome to the digital recovery room.** This repository hosts the source code for [BrokenITguy.com](https://brokenitguy.com), a live documentation of my journey returning to the IT world after a 10-year medical hiatus. It serves as both a technical portfolio and a personal accountability log.
+
+> *"I have more titanium in my spine than in my server rack. The hardware is broken, but the code is clean."*
+
+---
+
+## 🏗️ Architecture & Tech Stack
+
+This site is built to be lightweight, automated, and maintenance-free so I can focus on the backend lab work.
+
+| Component | Technology | Description |
+| :--- | :--- | :--- |
+| **Frontend** | HTML5 / CSS3 | "Matrix/Terminal" aesthetic with scanlines and glow effects. No heavy JS frameworks. |
+| **Hosting** | GitHub Pages | Static hosting directly from this repo. |
+| **Automation** | Python 3 | Custom script (`update.py`) to parse raw text notes into JSON. |
+| **Versioning** | Git / GitHub | Automated pushes via custom shell scripts. |
+| **Lab Hardware** | Proxmox / MSI / UDM | The physical infrastructure being documented. |
+
+---
+
+## 🤖 The "Zero-Friction" Automation System
+
+Because I can't spend hours formatting HTML every day, I built a custom Python automation pipeline.
+
+### How it works:
+1.  **Input:** I dump raw, unformatted brain-dumps into a local text file: `what i am doing.txt`.
+2.  **Processing:** The `update.py` script reads this file and uses Google's Gemini API to:
+    * Extract the technical context.
+    * Format it into a "System Log" style JSON entry.
+    * Add humor and "BrokenITguy" personality tags.
+3.  **Deployment:** A custom local shell script (`Update_Site.command`) automatically:
+    * Runs the Python processor.
+    * Updates `logs.json`.
+    * Commits changes to Git.
+    * Pushes to GitHub Pages.
+    * **Result:** The live site updates in < 30 seconds with zero coding required.
+
+---
+
+## 📸 Screenshots
+
+### The "Matrix" Interface
+*A dark-mode, terminal-inspired design to match the late-night sysadmin vibe.*
+![Interface Preview](https://github.com/acerhd/brokenitguy-site/blob/main/Screenshot%202026-01-01%20at%2018.06.47.jpg?raw=true)
+
+### The Logs
+*Automated entries tracking the wins, the fails, and the physical struggle.*
+![Logs Preview](https://github.com/acerhd/brokenitguy-site/blob/main/Screenshot%202026-01-01%20at%2018.07.19.jpg?raw=true)
+
+---
+
+## 🚧 Current Lab Roadmap (2026)
+
+- [x] **Phase 1:** Site Infrastructure & Automation (Completed Jan 2026)
+- [ ] **Phase 2:** UDM Firewall Ruleset Purge (In Progress - 50%)
+- [ ] **Phase 3:** Proxmox High Availability Cluster
+- [ ] **Phase 4:** Cisco Router Virtualization (C8000V)
+- [ ] **Phase 5:** "The Big Migration" (Moving 40TB ZFS Pool)
+
+---
+
+## 🤝 Connect
+
+I am documenting this mess live. If you want to see me break things (and occasionally fix them), follow the feeds:
+
+* 🌐 **Website:** [brokenitguy.com](https://brokenitguy.com)
+* 👔 **LinkedIn:** [Hugo D.](https://www.linkedin.com/) (Let's connect!)
+* 🐦 **X (Twitter):** [@brokenitguy](https://x.com/brokenitguy)
+* 📘 **Facebook:** [BrokenITguy](https://facebook.com/brokenitguy)
+
+---
+
+*© 2026 BrokenITguy Infrastructure. All rights reserved. No servers were harmed in the making of this README, but several coffees were destroyed.*
