@@ -98,15 +98,15 @@ def update_logs():
             contents=f"""
             Format the following raw text into a clean JSON log entry for a developer changelog.
             Return ONLY raw JSON (no markdown formatting).
-            
             Format:
             {{
-                "timestamp": "{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}",
-                "content": "Summarized version of the update",
-                "category": "General",
-                "raw_input": "The original text"
+                "date": "{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}",
+                "status": "SUCCESS",
+                "title": "GENERATE_A_COOL_TECH_TITLE_HERE",
+                "content": "Summarized version of the update (use <br> for new lines)",
+                "tags": ["#automated", "#update", "#brokenitguy"]
             }}
-
+            
             Raw Text:
             {new_content}
             """
