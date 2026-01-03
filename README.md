@@ -186,4 +186,3 @@ Added to `~/.zshrc` to enable the quick-entry command:
 function note() {
     echo "$1" >> "/Users/hugod/projects/brokenitguy/brokenitguy-site/what i am doing.txt"
     echo "✅ Log entry saved."
-}

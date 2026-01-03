@@ -9,10 +9,10 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 LOGS_FILE = os.path.join(BASE_DIR, "logs.json")
 INPUT_FILE = os.path.join(BASE_DIR, "what i am doing.txt")
 MARKER_FILE = os.path.join(BASE_DIR, ".log_marker")
+SECRETS_FILE = os.path.join(BASE_DIR, "secrets.json")
+FEED_FILE = os.path.join(BASE_DIR, "feed.xml")
 
 # --- LOAD SECRETS ---
-SECRETS_FILE = os.path.join(BASE_DIR, "secrets.json")
-
 try:
     with open(SECRETS_FILE, "r") as f:
         secrets = json.load(f)
@@ -21,10 +21,40 @@ except FileNotFoundError:
     print("CRITICAL ERROR: secrets.json not found!")
     exit()
 
+# Initialize Client
 client = genai.Client(api_key=API_KEY)
 
+# --- HELPER FUNCTION: GENERATE RSS FEED ---
+def generate_rss(all_logs):
+    """Generates an RSS feed from the logs.json data."""
+    rss_content = """<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+ <title>BrokenITGuy Updates</title>
+ <description>Live log entries from the headless pipeline.</description>
+ <link>https://brokenitguy.com</link>
+ <language>en-us</language>
+"""
+    # Loop through logs and add them as items
+    # We take the last 10 entries to keep the feed clean
+    for entry in all_logs[:10]:
+        rss_content += f""" <item>
+  <title>Update: {entry.get('timestamp', 'No Date')}</title>
+  <description>{entry.get('content', 'No Content')}</description>
+  <link>https://brokenitguy.com</link>
+  <guid>{entry.get('timestamp', '')}</guid>
+ </item>
+"""
+    rss_content += "</channel>\n</rss>"
+    
+    # Write the file to disk
+    with open(FEED_FILE, "w") as f:
+        f.write(rss_content)
+    print("✅ feed.xml generated successfully.")
+
+# --- MAIN UPDATE SCRIPT ---
 def update_logs():
-    # 1. READ ONLY NEW CONTENT
+    # 1. CHECK FOR NEW CONTENT
     last_pos = 0
     if os.path.exists(MARKER_FILE):
         try:
@@ -33,97 +63,89 @@ def update_logs():
         except:
             last_pos = 0
 
+    new_content = ""
+    current_pos = 0
+    
     try:
         with open(INPUT_FILE, "r") as f:
-            # Jump to where we left off last time
             f.seek(last_pos)
             new_content = f.read()
-            # Save the new position for next time
             current_pos = f.tell()
     except FileNotFoundError:
-        return # File doesn't exist yet, do nothing
+        print("Waiting for input file...")
+        return
 
-    # If there is nothing new, stop silently
+    # If nothing new, stop silently
     if not new_content.strip():
         return
 
+    print(f"🔹 New content detected: {len(new_content)} chars")
+
     # 2. READ EXISTING LOGS
-    try:
-        with open(LOGS_FILE, "r") as f:
-            existing_data = json.load(f)
-    except (FileNotFoundError, json.JSONDecodeError):
-        existing_data = []
+    existing_data = []
+    if os.path.exists(LOGS_FILE):
+        try:
+            with open(LOGS_FILE, "r") as f:
+                existing_data = json.load(f)
+        except json.JSONDecodeError:
+            existing_data = []
 
-    # Get current timestamp
-    current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-
-    # 3. AI INSTRUCTIONS
-    prompt = f"""
-        You are the AI system for the 'BrokenITguy' engineering logs.
-
-        IDENTITY / PERSONA:
-        You are Hugo (The BrokenITguy).
-        - **Background:** You are a medically retired IT pro making a comeback after a 10-year hiatus.
-        - **Physical Status:** You have more titanium in your spine than in your server rack. You are often working through pain.
-        - **Personality:** Sarcastic, gritty, self-deprecating, and geeky. You hate "fake motivation" poster energy. You are honest about the "messy reality" of relearning tech.
-        - **Current Mission:** Rebuilding a career and a Proxmox home lab while homeschooling your son.
-
-        TASK:
-        1. Read the user's raw input notes below (which may be short, misspelled, or dry).
-        2. **Fix spelling and grammar**, but DO NOT make it sound corporate or "ChatGPT-like." Keep it raw and human.
-        3. **Rewrite the content** to be humorous and dramatic.
-        - If the input is "fixed the wifi," you write: "Battled the invisible radio waves for 3 hours. I won. Wifi is stable. My sanity is not."
-        - If the input is "back hurts, stopping for now," you write: "Hardware Failure: The spine is throwing error codes. Initiating emergency shutdown (nap)."
-        4. Generate a **Cool "Matrix/Terminal" Title** (uppercase, underscores).
-
-        INPUT NOTES:
-        {new_content}
-
-        CURRENT TIME: {current_time}
-
-        REQUIRED JSON FORMAT:
-        [
-        {{
-            "date": "{current_time}",
-            "status": "SUCCESS" (or FAILED/WARNING based on content),
-            "title": "SYSTEM_REBOOT_INITIATED",
-            "content": "The witty, polished log text here. Use HTML <br> for line breaks.",
-            "tags": ["#BrokenITguy", "#Homelab", "#Reboot"]
-        }}
-        ]
-        """
-
+    # 3. GENERATE ENTRY WITH GEMINI
+    # (Using a standard prompt to format the raw text into a clean log entry)
     try:
         response = client.models.generate_content(
-            model="gemini-flash-latest", 
-            contents=prompt
+            model="gemini-2.5-flash-lite",
+            contents=f"""
+            Format the following raw text into a clean JSON log entry for a developer changelog.
+            Return ONLY raw JSON (no markdown formatting).
+            
+            Format:
+            {{
+                "timestamp": "{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}",
+                "content": "Summarized version of the update",
+                "category": "General",
+                "raw_input": "The original text"
+            }}
+
+            Raw Text:
+            {new_content}
+            """
         )
         
-        clean_json = response.text.replace("```json", "").replace("```", "").strip()
-        new_entries = json.loads(clean_json)
+        # Clean up response to ensure it's valid JSON
+        cleaned_response = response.text.replace("```json", "").replace("```", "").strip()
+        new_entry = json.loads(cleaned_response)
         
-        updated_data = new_entries + existing_data
-        
-        with open(LOGS_FILE, "w") as f:
-            json.dump(updated_data, f, indent=4)
-            
-        # UPDATE THE MARKER only if successful
-        with open(MARKER_FILE, "w") as f:
-            f.write(str(current_pos))
-         # --- NEW: AUTO-PUSH TO GITHUB ---
-        print(">> New log added. Pushing to GitHub...")
-        try:
-            subprocess.run(["git", "add", "logs.json"], check=True)
-            subprocess.run(["git", "commit", "-m", "Auto-update logs"], check=True)
-            subprocess.run(["git", "push", "origin", "main"], check=True)
-            print(">> SUCCESS: Website updated!")
-        except subprocess.CalledProcessError as e:
-            print(f"!! Git Error: {e}")   
+        # Add to the TOP of the list
+        updated_data = [new_entry] + existing_data
 
     except Exception as e:
-        print(f"ERROR: {e}")
-        print(f"Raw Response: {response.text}")
+        print(f"⚠️ AI Generation failed: {e}")
+        return
+
+    # 4. SAVE EVERYTHING
+    
+    # Save JSON Logs
+    with open(LOGS_FILE, "w") as f:
+        json.dump(updated_data, f, indent=4)
+    print("✅ logs.json updated.")
+
+    # Generate RSS Feed (The new fix!)
+    generate_rss(updated_data)
+
+    # Update Marker (so we don't re-read the same text)
+    with open(MARKER_FILE, "w") as f:
+        f.write(str(current_pos))
+
+    # 5. AUTO-PUSH TO GITHUB
+    print(">> New log added. Pushing to GitHub...")
+    try:
+        subprocess.run(["git", "add", "logs.json", "feed.xml"], check=True) # Added feed.xml to git add
+        subprocess.run(["git", "commit", "-m", "Auto-update logs & feed"], check=True)
+        subprocess.run(["git", "push", "origin", "main"], check=True)
+        print(">> SUCCESS: Website updated!")
+    except subprocess.CalledProcessError as e:
+        print(f"!! Git Error: {e}")
 
 if __name__ == "__main__":
     update_logs()
-    
