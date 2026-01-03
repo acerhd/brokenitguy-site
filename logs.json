@@ -1,5 +1,11 @@
 [
     {
+        "timestamp": "2026-01-03 13:14:32",
+        "content": "Tested the full pipeline via terminal command.",
+        "category": "Testing",
+        "raw_input": "[2026-01-03 13:14:32] Testing the full pipeline via terminal command."
+    },
+    {
         "timestamp": "2026-01-03 12:41:54",
         "content": "Testing new RSS feed logic.",
         "category": "General",
