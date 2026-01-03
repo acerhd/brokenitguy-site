@@ -7,6 +7,12 @@
  <language>en-us</language>
  <item>
   <title>Update: No Date</title>
+  <description>System is now location agnostic. <br> Users can now update from any location.</description>
+  <link>https://brokenitguy.com</link>
+  <guid></guid>
+ </item>
+ <item>
+  <title>Update: No Date</title>
   <description>First commit to test the automated changelog generation.</description>
   <link>https://brokenitguy.com</link>
   <guid></guid>
@@ -56,12 +62,6 @@
  <item>
   <title>Update: No Date</title>
   <description>Quick fix deployed. Corrected the pathing error that was sending the output to the void. Target acquisition confirmed.<br>Sometimes the smallest adjustment means the difference between a successful compile and three hours of screaming at the screen. Today, I'll take the small wins.</description>
-  <link>https://brokenitguy.com</link>
-  <guid></guid>
- </item>
- <item>
-  <title>Update: No Date</title>
-  <description>Fixed the highly critical, mandatory Facebook share button. Apparently, if users cannot immediately link our glorious content to Mark Zuckerberg's digital wasteland, the entire site is deemed useless. I stabilized the <span class='command-text'>social_link_handler.js</span> script. Yes, 'gottahave facebook'.</description>
   <link>https://brokenitguy.com</link>
   <guid></guid>
  </item>
