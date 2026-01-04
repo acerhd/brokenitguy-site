@@ -1,5 +1,16 @@
 [
     {
+        "date": "2026-01-04 14:00:23",
+        "status": "SUCCESS",
+        "title": "Plex is Acting Up",
+        "content": "Encountered an issue where Plex was exhibiting unexpected behavior.<br>Further investigation required.",
+        "tags": [
+            "#bug",
+            "#plex",
+            "#investigation"
+        ]
+    },
+    {
         "date": "2026-01-04 13:07:21",
         "status": "INFO",
         "title": "Homelab Focus: Media Server Rework",

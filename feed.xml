@@ -7,6 +7,12 @@
  <language>en-us</language>
  <item>
   <title>Update: No Date</title>
+  <description>Encountered an issue where Plex was exhibiting unexpected behavior.<br>Further investigation required.</description>
+  <link>https://brokenitguy.com</link>
+  <guid></guid>
+ </item>
+ <item>
+  <title>Update: No Date</title>
   <description>Taking a break from automation and website development to focus on the homelab.<br>Currently working on getting the media server operational.</description>
   <link>https://brokenitguy.com</link>
   <guid></guid>
@@ -56,12 +62,6 @@
  <item>
   <title>Update: No Date</title>
   <description>Verifying the new AI schema fix. This entry should have a proper Title and Status.</description>
-  <link>https://brokenitguy.com</link>
-  <guid></guid>
- </item>
- <item>
-  <title>Update: No Date</title>
-  <description>Phase 1 of the automation is complete. I managed to brute-force the final scripts into submission last night before the inevitable hardware failure.<br><br>My brain successfully executed the logic gates required, but my physical chassis decided it had reached critical temperature. The titanium in my spine started throwing severe interrupt requests, forcing a non-graceful shutdown.<br><br>I crashed. Hard. I wasn't just tired; I was operating on negative sleep debt and pure spite. I hate that 'hustle culture' energy, but sometimes, getting the win means working until your body throws up its own blue screen. Time for a painful, but productive, morning reboot.</description>
   <link>https://brokenitguy.com</link>
   <guid></guid>
  </item>
