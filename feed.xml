@@ -7,6 +7,12 @@
  <language>en-us</language>
  <item>
   <title>Update: No Date</title>
+  <description>Despite experiencing pain, the developer is determined to work today.<br>This signifies a strong commitment to productivity.</description>
+  <link>https://brokenitguy.com</link>
+  <guid></guid>
+ </item>
+ <item>
+  <title>Update: No Date</title>
   <description>It is 4 AM and the developer has conceded defeat to the current issue for the night. <br> Further attempts will be made tomorrow.</description>
   <link>https://brokenitguy.com</link>
   <guid></guid>
@@ -56,12 +62,6 @@
  <item>
   <title>Update: No Date</title>
   <description>Taking a break from automation and website development to focus on the homelab.<br>Currently working on getting the media server operational.</description>
-  <link>https://brokenitguy.com</link>
-  <guid></guid>
- </item>
- <item>
-  <title>Update: No Date</title>
-  <description>Prepared the base for homemade ice cream for tomorrow's indulgence.</description>
   <link>https://brokenitguy.com</link>
   <guid></guid>
  </item>
