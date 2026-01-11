@@ -7,6 +7,12 @@
  <language>en-us</language>
  <item>
   <title>Update: No Date</title>
+  <description>Plex functionality has been successfully integrated.<br>VPN and networking stability require further investigation.</description>
+  <link>https://brokenitguy.com</link>
+  <guid></guid>
+ </item>
+ <item>
+  <title>Update: No Date</title>
   <description>Despite experiencing pain, the developer is determined to work today.<br>This signifies a strong commitment to productivity.</description>
   <link>https://brokenitguy.com</link>
   <guid></guid>
@@ -56,12 +62,6 @@
  <item>
   <title>Update: No Date</title>
   <description>Encountered an issue where Plex was exhibiting unexpected behavior.<br>Further investigation required.</description>
-  <link>https://brokenitguy.com</link>
-  <guid></guid>
- </item>
- <item>
-  <title>Update: No Date</title>
-  <description>Taking a break from automation and website development to focus on the homelab.<br>Currently working on getting the media server operational.</description>
   <link>https://brokenitguy.com</link>
   <guid></guid>
  </item>
