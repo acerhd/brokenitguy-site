@@ -1,5 +1,17 @@
 [
     {
+        "date": "2026-01-16 20:45:41",
+        "status": "SUCCESS",
+        "title": "Media Server Overhaul with Docker",
+        "content": "Initiated a new approach for the media server utilizing Docker.<br>Initial deployment successful.",
+        "tags": [
+            "#automated",
+            "#update",
+            "#media",
+            "#docker"
+        ]
+    },
+    {
         "date": "2026-01-10 21:43:03",
         "status": "SUCCESS",
         "title": "Plex Integration Achieved, Network TBD",
