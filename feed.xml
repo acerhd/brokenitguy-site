@@ -7,6 +7,12 @@
  <language>en-us</language>
  <item>
   <title>Update: No Date</title>
+  <description>Overhauling the main brokenitguy.com site. Feedback suggested a lack of modern appeal. Undertaking efforts to make the site hip and modern.</description>
+  <link>https://brokenitguy.com</link>
+  <guid></guid>
+ </item>
+ <item>
+  <title>Update: No Date</title>
   <description>Successfully processed the raw text to create a JSON log entry.<br>This serves as a foundational example for future automated changelog updates.</description>
   <link>https://brokenitguy.com</link>
   <guid></guid>
@@ -56,12 +62,6 @@
  <item>
   <title>Update: No Date</title>
   <description>Plex functionality has been successfully integrated.<br>VPN and networking stability require further investigation.</description>
-  <link>https://brokenitguy.com</link>
-  <guid></guid>
- </item>
- <item>
-  <title>Update: No Date</title>
-  <description>Despite experiencing pain, the developer is determined to work today.<br>This signifies a strong commitment to productivity.</description>
   <link>https://brokenitguy.com</link>
   <guid></guid>
  </item>
