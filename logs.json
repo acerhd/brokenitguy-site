@@ -1,303 +1,80 @@
-[
-    {
-        "date": "2026-01-01 17:26:51",
-        "status": "SUCCESS",
-        "title": "MANDATORY SOCIAL COMPLIANCE",
-        "content": "Fixed the highly critical, mandatory Facebook share button. Apparently, if users cannot immediately link our glorious content to Mark Zuckerberg's digital wasteland, the entire site is deemed useless. I stabilized the <span class='command-text'>social_link_handler.js</span> script. Yes, 'gottahave facebook'.",
-        "tags": [
-            "#facebook",
-            "#frontend",
-            "#mandatory",
-            "#marketing"
-        ]
-    },
-    {
-        "date": "2026-01-01 17:11:00",
-        "status": "SUCCESS",
-        "title": "Traditional Greetings and Low Expectations",
-        "content": "<p>System check returned the most basic payload possible. It seems even AI systems get lazy. Log output:</p><p><span class='command-text'>hello world</span></p>",
-        "tags": [
-            "#initialization",
-            "#test",
-            "#echo"
-        ]
-    },
-    {
-        "date": "2026-01-01 17:04:05",
-        "status": "SUCCESS",
-        "title": "Payload Obfuscation Complete",
-        "content": "Secured the critical keys. Using nested directory structures and rotating the encryption vector daily. <p>The best place to hide secrets is right next to the documentation they already ignore. Running <span class='command-text'>scrub -r</span> on the original location just to be safe.",
-        "tags": [
-            "#opsec",
-            "#security",
-            "#data_loss"
-        ]
-    },
-    {
-        "date": "2026-01-01 16:55:55",
-        "status": "DEGRADED",
-        "title": "Physical Resources Exhausted",
-        "content": "<p>Critical system warning: The human interface device is reporting severe <span class='command-text'>PAIN_STATE</span>. Sitting duration has exceeded acceptable thresholds, leading to full-body resource depletion and severe fatigue. Initiating mandatory, though delayed, system shutdown (soon).</p>",
-        "tags": [
-            "#exhaustion",
-            "#hardware_failure",
-            "#overtime"
-        ]
-    },
-    {
-        "date": "2026-01-01 16:53:40",
-        "status": "SUCCESS",
-        "title": "[CMD] FIREWALL RECONSTRUCTION COMPLETE",
-        "content": "Cleaning up the network <span class='command-text'>firewalls</span>. Seriously, the initial configuration I setup when learning the <span class='command-text'>UDM</span> was a disaster zone. Rebuilt the core ruleset from scratch.",
-        "tags": [
-            "#networking",
-            "#UDM",
-            "#firewall",
-            "#cleanup"
-        ]
-    },
-    {
-        "date": "2026-01-01 16:53:40",
-        "status": "SUCCESS",
-        "title": "[BUG] VPN TUNNEL STABILIZATION",
-        "content": "Tackling persistent <span class='command-text'>VPN</span> connectivity issues affecting one of the virtual machines residing on <span class='command-text'>Proxmox</span>. The handshake was getting sloppy.",
-        "tags": [
-            "#VPN",
-            "#Proxmox",
-            "#server",
-            "#networking"
-        ]
-    },
-    {
-        "date": "2026-01-01 16:53:40",
-        "status": "FAILED",
-        "title": "[ERR] MEDIA_SERVER AUTH FAIL LOOP",
-        "content": "Why is the media server suddenly acting like it doesn't know me? Endless, frustrating cycle of password issues. Starting to wonder if I accidentally applied a new policy or if the server is just spiteful.",
-        "tags": [
-            "#mediaserver",
-            "#authfail",
-            "#passwords",
-            "#wrestlingtech"
-        ]
-    },
-    {
-        "date": "2026-01-01 16:53:40",
-        "status": "WARNING",
-        "title": "[WARNING] AI LIMIT REACHED (AGAIN)",
-        "content": "Seriously? My AI helper service keeps hitting its request limits, despite the premium subscription. Paying for IT support that stops working when you need it most is peak irony.",
-        "tags": [
-            "#AI",
-            "#resource",
-            "#subscription",
-            "#frustration"
-        ]
-    },
-    {
-        "date": "2026-01-01 16:53:40",
-        "status": "INFO",
-        "title": "[WIP] BROKENITGUY.COM",
-        "content": "General development and maintenance work on the website infrastructure.",
-        "tags": [
-            "#website",
-            "#dev"
-        ]
-    },
-    {
-        "date": "2026-01-01 16:53:40",
-        "status": "SUCCESS",
-        "title": "[DEPLOY] V2.0 LOGS AUTOMATION ONLINE",
-        "content": "Major update: Deployed the new welcome/intro page and, most importantly, fully automated the log posting mechanism. Now this process is slightly less manual pain.",
-        "tags": [
-            "#website",
-            "#automation",
-            "#logs",
-            "#feature"
-        ]
-    },
-    {
-        "date": "2026-01-01 16:53:40",
-        "status": "SUCCESS",
-        "title": "[SCRIPT] PERSONAL AI PIPELINE FINE-TUNED",
-        "content": "Finished internal scripting for personal AI automation workflows. Making the machines do the boring stuff.",
-        "tags": [
-            "#AI",
-            "#automation",
-            "#scripting",
-            "#devops"
-        ]
-    },
-    {
-        "date": "2026-01-01 16:53:40",
-        "status": "INFO",
-        "title": "[TEST] FOLDER MIGRATION VERIFICATION",
-        "content": "Verifying permissions and accessibility for the recently migrated project folder structure. Just making sure I didn't break every link in the chain.",
-        "tags": [
-            "#organization",
-            "#testing",
-            "#migration"
-        ]
-    },
-    {
-        "date": "2026-01-01 16:47:39",
-        "status": "IN_PROGRESS",
-        "title": "Firewall Cleanup: Fixing My Own Initial Mess",
-        "content": "Cleaning up the <span class='command-text'>firewalls</span> and rebuilding them from scratch. This is phase 1 of fixing the monumental networking mess I created when I first started learning the <span class='command-text'>UDM (Unifi Dream Machine)</span> setup. Why does learning always involve breaking everything first?",
-        "tags": [
-            "#networking",
-            "#UDM",
-            "#firewall",
-            "#cleanup"
-        ]
-    },
-    {
-        "date": "2026-01-01 16:47:39",
-        "status": "IN_PROGRESS",
-        "title": "Proxmox Server VPN Trauma",
-        "content": "Spent time wrestling with a stubborn <span class='command-text'>VPN</span> connection issue affecting one of the key virtual servers running inside <span class='command-text'>Proxmox</span>. It decided today was a good day to stop talking to the outside world.",
-        "tags": [
-            "#VPN",
-            "#Proxmox",
-            "#server",
-            "#networking"
-        ]
-    },
-    {
-        "date": "2026-01-01 16:47:39",
-        "status": "FAILURE",
-        "title": "Media Server Password Amnesia",
-        "content": "The <span class='command-text'>media server</span> has decided it hates me. Experiencing weird, persistent authentication failures and <span class='command-text'>password issues</span> that shouldn't logically be happening. I hate user permissions.",
-        "tags": [
-            "#mediaserver",
-            "#auth",
-            "#frustration",
-            "#security"
-        ]
-    },
-    {
-        "date": "2026-01-01 16:47:39",
-        "status": "FAILURE",
-        "title": "Paid AI Helper Reaches Rate Limit",
-        "content": "Seriously? My <span class='command-text'>AI helper</span> keeps hitting arbitrary limits despite the fact that I am literally paying premium rates for infrastructure access. IT costs and arbitrary paywalls strike again.",
-        "tags": [
-            "#AI",
-            "#SaaS",
-            "#cost",
-            "#frustration"
-        ]
-    },
-    {
-        "date": "2026-01-01 16:47:39",
-        "status": "IN_PROGRESS",
-        "title": "Website Infrastructure Check",
-        "content": "General maintenance and infrastructure checks on the main <span class='command-text'>website</span> deployment.",
-        "tags": [
-            "#website",
-            "#development"
-        ]
-    },
-    {
-        "date": "2026-01-01 16:47:39",
-        "status": "SUCCESS",
-        "title": "Log Automation Deployed",
-        "content": "Major update to the website front end. Deployed the new welcoming/introductory landing page. Critically, I implemented the <span class='command-text'>logs page</span> and configured the automation hooks for posting entries.",
-        "tags": [
-            "#website",
-            "#automation",
-            "#development",
-            "#logging"
-        ]
-    },
-    {
-        "date": "2026-01-01 16:47:39",
-        "status": "SUCCESS",
-        "title": "Self-Automated AI Scripts Finished",
-        "content": "Successfully finished setting up some custom, self-coded <span class='command-text'>AI automation scripts</span>. If I can automate my own work, maybe I won't have to rely on the helper that keeps limiting me.",
-        "tags": [
-            "#AI",
-            "#automation",
-            "#scripts",
-            "#customdev"
-        ]
-    },
-    {
-        "date": "2026-01-01 16:47:39",
-        "status": "IN_PROGRESS",
-        "title": "Testing New Project Directory Structure",
-        "content": "Final verification testing after migrating the main project directory structure to a new storage location. Fingers crossed no dependency paths broke during the move.",
-        "tags": [
-            "#files",
-            "#testing",
-            "#migration",
-            "#storage"
-        ]
-    },
-    {
-        "date": "2026-01-01 14:53:02",
-        "status": "SUCCESS",
-        "title": "Firewall Cleanup: The Legacy Mess",
-        "content": "Cleaning up the <span class='command-text'>firewalls</span> and attempting to rebuild sanity from the colossal mess I created when I first got the <span class='command-text'>UDM</span> and was clearly still learning how networking actually works.",
-        "tags": [
-            "#networking",
-            "#cleanup",
-            "#UDM",
-            "#firewall"
-        ]
-    },
-    {
-        "date": "2026-01-01 14:53:02",
-        "status": "SUCCESS",
-        "title": "Patching VPN Tunnels to Proxmox",
-        "content": "Deep dive into fixing stubborn <span class='command-text'>VPN</span> connectivity issues tied to one of the specific <span class='command-text'>Servers</span> residing within the <span class='command-text'>Proxmox</span> environment. Why are the easy fixes never actually easy?",
-        "tags": [
-            "#VPN",
-            "#Proxmox",
-            "#networking",
-            "#server"
-        ]
-    },
-    {
-        "date": "2026-01-01 14:53:02",
-        "status": "WARNING",
-        "title": "Authentication Hell: Media Server Login Loop",
-        "content": "Experiencing inexplicable and frustrating <span class='command-text'>password issues</span> with my primary <span class='command-text'>media server</span>. It's probably user error from three months ago, but I\u2019m blaming cosmic rays.",
-        "tags": [
-            "#security",
-            "#mediaserver",
-            "#authfail"
-        ]
-    },
-    {
-        "date": "2026-01-01 14:53:02",
-        "status": "ERROR",
-        "title": "AI Helper Resource Limit Exceeded",
-        "content": "The irony is painful: My paid, 'unlimited' <span class='command-text'>AI helper</span> keeps slamming into its usage limits. Apparently, paying for IT doesn't mean you get to use it for IT.",
-        "tags": [
-            "#AI",
-            "#system_alert",
-            "#vendor_fail"
-        ]
-    },
-    {
-        "date": "2026-01-01 14:53:02",
-        "status": "SUCCESS",
-        "title": "Website Deployment: Log Automation v1.0",
-        "content": "Website deployment finalized. Updated the site with a proper welcome page and intro. Crucially, added the log page with integrated <span class='command-text'>automation</span> hooks for posting updates directly from these notes.",
-        "tags": [
-            "#website",
-            "#automation",
-            "#deployment",
-            "#project"
-        ]
-    },
-    {
-        "date": "2026-01-01",
-        "status": "SUCCESS",
-        "title": "SYSTEM INITIALIZATION",
-        "content": "Core infrastructure successfully deployed. Website is live. Socials are linked. The reboot sequence has completed without critical errors.",
-        "tags": [
-            "#infrastructure",
-            "#deploy",
-            "#uptime"
-        ]
-    }
-]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrokenITGuy | System Logs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        :root { --primary-teal: #00d1b2; --bg-black: #0d0d0d; --text-main: #e0e0e0; --mono-font: 'Fira Code', monospace; --body-font: 'Inter', sans-serif; --success: #39ff14; --warning: #F2A900; --fail: #ff4d4d; }
+        body { background-color: var(--bg-black); background-image: url('background.png'); background-size: cover; background-position: center; background-attachment: fixed; margin: 0; display: flex; justify-content: flex-start; min-height: 100vh; color: var(--text-main); }
+        .terminal-sidebar { width: 100%; max-width: 550px; background: rgba(0, 0, 0, 0.65); border-right: 1px solid rgba(0, 209, 178, 0.3); height: 100vh; overflow-y: auto; padding: 40px; box-sizing: border-box; backdrop-filter: blur(10px); }
+        .nav-item { font-family: var(--mono-font); text-decoration: none; color: var(--primary-teal); font-size: 1rem; display: inline-block; margin-bottom: 25px; font-weight: bold; }
+        .nav-item:hover { color: #fff; text-shadow: 0 0 8px var(--primary-teal); }
+        .log-entry { font-family: var(--mono-font); font-size: 0.85rem; border-left: 2px solid var(--primary-teal); padding-left: 15px; margin-bottom: 30px; line-height: 1.6; }
+        .log-date { color: var(--primary-teal); font-weight: bold; }
+        .status-tag { font-size: 0.7rem; padding: 2px 5px; border-radius: 2px; margin-left: 10px; font-weight: bold; }
+        .SUCCESS { color: var(--success); } .WARNING { color: var(--warning); } .FAILED { color: var(--fail); } .DEGRADED { color: var(--fail); }
+        .suggestion-widget { position: fixed; bottom: 20px; right: 20px; width: 260px; background: rgba(0, 0, 0, 0.85); border: 1px solid var(--primary-teal); padding: 15px; border-radius: 4px; backdrop-filter: blur(10px); z-index: 1000; }
+        .suggestion-widget h4 { font-family: var(--mono-font); font-size: 0.7rem; color: var(--primary-teal); margin: 0 0 10px 0; }
+        .suggestion-widget textarea { width: 100%; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(0, 209, 178, 0.3); color: #fff; font-family: var(--mono-font); font-size: 0.75rem; padding: 10px; box-sizing: border-box; resize: none; margin-bottom: 10px; outline: none; }
+        .suggestion-widget button { width: 100%; background: transparent; border: 1px solid var(--primary-teal); color: var(--primary-teal); font-family: var(--mono-font); font-size: 0.7rem; padding: 8px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="terminal-sidebar">
+        <a href="index.html" class="nav-item">>> RETURN_TO_HOME [CLICK_HERE]</a>
+
+        <div class="log-content">
+            <div class="log-entry">
+                <span class="log-date">[2026-01-28]</span> <span class="status-tag SUCCESS">LIVE</span><br>
+                > SYSTEM_REBOOT successfully deployed to Netlify production.<br>
+                > Standardized navigation paths to avoid local server encoding errors.<br>
+                > Current Status: My spine feels like a SATA cable that's been bent too many times, but the code is clean.
+            </div>
+
+            <div class="log-entry">
+                <span class="log-date">[2026-01-01]</span> <span class="status-tag SUCCESS">SUCCESS</span><br>
+                > MANDATORY SOCIAL COMPLIANCE: Fixed the critical Facebook share button.<br>
+                > If users can't link content to Zuckerberg's wasteland, the site is apparently useless.<br>
+                > <span style="color:var(--primary-teal)">social_link_handler.js</span> stabilized.
+            </div>
+
+            <div class="log-entry">
+                <span class="log-date">[2026-01-01]</span> <span class="status-tag SUCCESS">SUCCESS</span><br>
+                > [CMD] FIREWALL RECONSTRUCTION COMPLETE.<br>
+                > My initial UDM config was a disaster zone. Rebuilt the core ruleset from scratch.<br>
+                > Sanity restored to the <span style="color:var(--primary-teal)">firewalls</span>.
+            </div>
+
+            <div class="log-entry">
+                <span class="log-date">[2026-01-01]</span> <span class="status-tag DEGRADED">WARNING</span><br>
+                > Physical Resources Exhausted: Human interface device reporting severe <span style="color:var(--fail)">PAIN_STATE</span>.<br>
+                > Sitting duration has exceeded acceptable thresholds. Full-body resource depletion detected.<br>
+                > Initiating mandatory, though delayed, system shutdown.
+            </div>
+
+            <div class="log-entry">
+                <span class="log-date">[2026-01-01]</span> <span class="status-tag SUCCESS">SUCCESS</span><br>
+                > [BUG] VPN TUNNEL STABILIZATION: Fixed sloppy handshakes for virtual machines on <span style="color:var(--primary-teal)">Proxmox</span>.<br>
+                > Patching the VPN tunnels was supposed to be easy. It wasn't.
+            </div>
+
+            <div class="log-entry">
+                <span class="log-date">[2026-01-01]</span> <span class="status-tag FAILED">ERROR</span><br>
+                > [ERR] MEDIA_SERVER AUTH FAIL LOOP: Media server is acting like it doesn't know me.<br>
+                > Blaming cosmic rays for the authentication hell. I hate user permissions.
+            </div>
+        </div>
+    </div>
+
+    <div class="suggestion-widget">
+        <form name="suggestions" method="POST" data-netlify="true">
+            <h4>[ SUGGESTIONS_FEED ]</h4>
+            <textarea name="message" rows="4" placeholder="Input suggestion..." required></textarea>
+            <button type="submit">SEND_PACKET</button>
+        </form>
+    </div>
+</body>
+</html>
