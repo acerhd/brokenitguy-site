@@ -7,13 +7,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
-        :root { --primary-teal: #00d1b2; --bg-black: #0d0d0d; --text-main: #e0e0e0; --mono-font: 'Fira Code', monospace; --body-font: 'Inter', sans-serif; }
+        :root { --primary-teal: #00d1b2; --bg-black: #0d0d0d; --text-main: #e0e0e0; --mono-font: 'Fira Code', monospace; --body-font: 'Inter', sans-serif; --success: #39ff14; --warning: #F2A900; --fail: #ff4d4d; }
         body { background-color: var(--bg-black); background-image: url('background.png'); background-size: cover; background-position: center; background-attachment: fixed; margin: 0; display: flex; justify-content: flex-start; min-height: 100vh; color: var(--text-main); }
         .terminal-sidebar { width: 100%; max-width: 550px; background: rgba(0, 0, 0, 0.65); border-right: 1px solid rgba(0, 209, 178, 0.3); height: 100vh; overflow-y: auto; padding: 40px; box-sizing: border-box; backdrop-filter: blur(10px); }
         .nav-item { font-family: var(--mono-font); text-decoration: none; color: var(--primary-teal); font-size: 1rem; display: inline-block; margin-bottom: 25px; font-weight: bold; }
         .nav-item:hover { color: #fff; text-shadow: 0 0 8px var(--primary-teal); }
         .log-entry { font-family: var(--mono-font); font-size: 0.85rem; border-left: 2px solid var(--primary-teal); padding-left: 15px; margin-bottom: 30px; line-height: 1.6; }
         .log-date { color: var(--primary-teal); font-weight: bold; }
+        .status-tag { font-size: 0.7rem; padding: 2px 5px; border-radius: 2px; margin-left: 10px; font-weight: bold; }
+        .SUCCESS { color: var(--success); } .WARNING { color: var(--warning); } .FAILED { color: var(--fail); }
         .suggestion-widget { position: fixed; bottom: 20px; right: 20px; width: 260px; background: rgba(0, 0, 0, 0.85); border: 1px solid var(--primary-teal); padding: 15px; border-radius: 4px; backdrop-filter: blur(10px); z-index: 1000; }
         .suggestion-widget h4 { font-family: var(--mono-font); font-size: 0.7rem; color: var(--primary-teal); margin: 0 0 10px 0; }
         .suggestion-widget textarea { width: 100%; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(0, 209, 178, 0.3); color: #fff; font-family: var(--mono-font); font-size: 0.75rem; padding: 10px; box-sizing: border-box; resize: none; margin-bottom: 10px; outline: none; }
@@ -23,26 +25,15 @@
 <body>
     <div class="terminal-sidebar">
         <a href="index.html" class="nav-item">>> RETURN_TO_HOME [CLICK_HERE]</a>
+        
+        <a href="log_archive.html" class="nav-item" style="color: #F2A900; display: block; margin-top: -10px; margin-bottom: 30px;">>> VIEW_DEEP_ARCHIVE [LEGACY_DATA]</a>
 
         <div class="log-content">
             <div class="log-entry">
-                <span class="log-date">[2026-01-28]</span><br>
-                > SYSTEM_REBOOT successfully deployed to Netlify production.<br>
-                > Standardized navigation paths to kill the local server "%20" encoding bugs.<br>
-                > Interactive Suggestion Feed is officially active and routing packets to Proton Mail.<br>
-                > Current Status: My spine feels like a SATA cable that's been bent too many times, but the code is clean.
-            </div>
-
-            <div class="log-entry">
-                <span class="log-date">[2026-01-20]</span><br>
-                > Infrastructure migration to Netlify initiated.<br>
-                > Domain purchase confirmed. Uptime ticker officially started at 2024-03-19.
-            </div>
-
-            <div class="log-entry">
-                <span class="log-date">[2026-01-01]</span><br>
-                > New Year, same hardware, better documentation.<br>
-                > Phase 1 Roadmap: Site infrastructure and automation finalized.
+                <span class="log-date">[2026-01-28]</span> <span class="status-tag SUCCESS">LIVE</span><br>
+                > Active logs reset. Legacy data migrated to hardcoded archive.<br>
+                > [SUGGESTION_FEED] active and verified on production server.<br>
+                > Current Status: System stable. Spine still pending hardware update.
             </div>
         </div>
     </div>
