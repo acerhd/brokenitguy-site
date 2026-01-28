@@ -3,173 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BrokenITGuy | Home</title>
+    <title>BrokenITGuy | System Logs</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    
     <style>
-        :root {
-            --primary-teal: #00d1b2;
-            --bg-black: #0d0d0d;
-            --text-main: #e0e0e0;
-            --mono-font: 'Fira Code', monospace;
-            --body-font: 'Inter', sans-serif;
-            --success-green: #39ff14;
-        }
-
-        body {
-            background-color: var(--bg-black);
-            background-image: url('background.png');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            margin: 0;
-            display: flex;
-            justify-content: flex-start; 
-            min-height: 100vh;
-            color: var(--text-main);
-        }
-
-        .terminal-sidebar {
-            width: 100%;
-            max-width: 550px;
-            background: rgba(0, 0, 0, 0.65); /* 65% transparency */
-            border-right: 1px solid rgba(0, 209, 178, 0.3);
-            height: 100vh;
-            overflow-y: auto;
-            padding: 40px;
-            box-sizing: border-box;
-            backdrop-filter: blur(10px);
-            display: flex;
-            flex-direction: column;
-        }
-
-        @media (max-width: 768px) {
-            body { display: block; }
-            .terminal-sidebar { max-width: 100%; height: auto; border-right: none; background: rgba(0, 0, 0, 0.85); }
-        }
-
-        .logo-section img { width: 100%; max-width: 280px; margin-bottom: 10px; }
-        .loading-bar { width: 100%; height: 12px; border: 1px solid var(--primary-teal); margin-bottom: 5px; border-radius: 2px; }
-        .loading-fill { width: 75%; height: 100%; background: var(--primary-teal); box-shadow: 0 0 10px var(--primary-teal); }
-
-        .meta-data { font-family: var(--mono-font); font-size: 0.75rem; color: var(--primary-teal); margin-bottom: 25px; line-height: 1.6; }
-        .meta-data span { color: #888; }
-        #uptime-ticker { color: var(--success-green); font-weight: bold; }
-
-        /* The specific navigation link style */
-        .nav-item { 
-            font-family: var(--mono-font); 
-            text-decoration: none; 
-            color: var(--primary-teal); 
-            font-size: 1rem; 
-            display: inline-block; 
-            margin-bottom: 20px; 
-            font-weight: bold; 
-            border-bottom: 1px solid transparent;
-        }
-        .nav-item:hover { color: #fff; border-bottom: 1px solid var(--primary-teal); }
-
-        .story-content { font-family: var(--body-font); line-height: 1.7; font-size: 1rem; border-top: 1px dashed rgba(0, 209, 178, 0.2); padding-top: 25px; flex-grow: 1; }
-        .story-content p { margin-bottom: 18px; }
-        
-        .highlight-bullets { list-style: none; padding: 0; font-family: var(--mono-font); color: var(--primary-teal); font-size: 0.85rem; margin: 20px 0; }
-        .highlight-bullets li { margin-bottom: 10px; }
-
-        .social-footer {
-            margin-top: 35px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            display: flex;
-            gap: 20px;
-            justify-content: flex-start;
-            flex-wrap: wrap;
-        }
-        .social-link { color: var(--primary-teal); font-size: 1.4rem; transition: 0.3s; }
-        .social-link:hover { color: #fff; transform: translateY(-3px); }
-
-        /* New Feedback Box */
-        .feedback-box {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: rgba(0, 0, 0, 0.7);
-            border: 1px solid var(--primary-teal);
-            padding: 10px 15px;
-            border-radius: 4px;
-            font-family: var(--mono-font);
-            font-size: 0.7rem;
-            color: var(--primary-teal);
-            text-decoration: none;
-            backdrop-filter: blur(5px);
-            z-index: 1000;
-        }
-        .feedback-box:hover { background: var(--primary-teal); color: #000; }
+        :root { --primary-teal: #00d1b2; --bg-black: #0d0d0d; --text-main: #e0e0e0; --mono-font: 'Fira Code', monospace; --body-font: 'Inter', sans-serif; }
+        body { background-color: var(--bg-black); background-image: url('background.png'); background-size: cover; background-position: center; background-attachment: fixed; margin: 0; display: flex; justify-content: flex-start; min-height: 100vh; color: var(--text-main); }
+        .terminal-sidebar { width: 100%; max-width: 550px; background: rgba(0, 0, 0, 0.65); border-right: 1px solid rgba(0, 209, 178, 0.3); height: 100vh; overflow-y: auto; padding: 40px; box-sizing: border-box; backdrop-filter: blur(10px); }
+        .nav-item { font-family: var(--mono-font); text-decoration: none; color: var(--primary-teal); font-size: 1rem; display: inline-block; margin-bottom: 25px; font-weight: bold; }
+        .log-entry { font-family: var(--mono-font); font-size: 0.85rem; border-left: 2px solid var(--primary-teal); padding-left: 15px; margin-bottom: 30px; line-height: 1.6; }
+        .log-date { color: var(--primary-teal); font-weight: bold; }
+        .suggestion-widget { position: fixed; bottom: 20px; right: 20px; width: 260px; background: rgba(0, 0, 0, 0.85); border: 1px solid var(--primary-teal); padding: 15px; border-radius: 4px; backdrop-filter: blur(10px); z-index: 1000; }
     </style>
 </head>
 <body>
-
     <div class="terminal-sidebar">
-        <div class="logo-section">
-            <img src="logo.png" alt="Broken IT Guy">
-            <div class="loading-bar"><div class="loading-fill"></div></div>
-        </div>
-
-        <div class="meta-data">
-            <div><span>> SYSTEM_REBOOT_INITIATED:</span> <span id="uptime-ticker">00:00:00:00</span></div>
-            <div><span>> USER:</span> Hugo (BrokenITGuy)</div>
-            <div><span>> EXEC:</span> WHOAMI.TXT</div>
-        </div>
-
-        <a href="log.html" class="nav-item">>> ACCESS_SYSTEM_LOGS [CLICK_HERE]</a>
-
-        <div class="story-content">
-            <p><strong>I am Hugo, the BrokenITGuy.</strong></p>
-            <p>After a decade-long hiatus from IT due to a series of surgeries—which felt like they came with a discount code—I vanished from the industry. Just... vanished.</p>
-            <p>But turns out sitting on the couch felt worse than the actual pain, so here we are. I'm thinking and trying to rebuild something of a career I thought was done with.</p>
-            <p>I'm also homeschooling my son, who has ADHD as creatively destructive as mine, gaming with him when my spine isn't cosplaying as a pinched nerve, and learning what it means to actually do things again.</p>
-            
-            <ul class="highlight-bullets">
-                <li>⚡ Me attempting homelab networking at 3 am, fueled by Pepsi and pure stubbornness.</li>
-                <li>⚡ Cert grinds that humble me weekly.</li>
-                <li>⚡ A kid who laughs at my pain in the best way.</li>
-                <li>⚡ Me figuring out how to be alive again.</li>
-            </ul>
-
-            <p>No filters. No fake motivation. Just real life, broken hardware, and the beautiful disaster of trying.</p>
-        </div>
-
-        <div class="social-footer">
-            <a href="https://instagram.com/brokenitguy" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://twitter.com/brokenitguy_" class="social-link" target="_blank"><i class="fab fa-x-twitter"></i></a>
-            <a href="https://facebook.com/BrokenITguy" class="social-link" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://threads.net/@brokenitguy" class="social-link" target="_blank"><i class="fab fa-threads"></i></a>
-            <a href="https://github.com/hugod" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="mailto:brokenitguy@proton.me" class="social-link"><i class="fas fa-envelope"></i></a>
+        <a href="index.html" class="nav-item">>> RETURN_TO_HOME [CLICK_HERE]</a>
+        <div class="log-content">
+            <div class="log-entry">
+                <span class="log-date">[2026-01-28]</span><br>
+                > Nav fix deployed.<br>
+                > Human-readable uptime ticker integrated.<br>
+                > Netlify suggestion box active.
+            </div>
+            <div class="log-entry">
+                <span class="log-date">[2026-01-20]</span><br>
+                > Infrastructure migration to Netlify complete.
+            </div>
         </div>
     </div>
-
-    <a href="mailto:brokenitguy@proton.me?subject=Feedback" class="feedback-box">
-        [ SUGGESTIONS_OR_FEEDBACK ]
-    </a>
-
-    <script>
-        const rebootDate = new Date("2024-03-19T00:00:00");
-        function updateUptime() {
-            const now = new Date();
-            const diff = now - rebootDate;
-            if (diff < 0) return;
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-            const mins = Math.floor((diff / (1000 * 60)) % 60);
-            const secs = Math.floor((diff / 1000) % 60);
-            
-            document.getElementById("uptime-ticker").innerText = 
-                String(days).padStart(2, '0') + ":" + String(hours).padStart(2, '0') + ":" + 
-                String(mins).padStart(2, '0') + ":" + String(secs).padStart(2, '0');
-        }
-        setInterval(updateUptime, 1000);
-        updateUptime();
-    </script>
+    <div class="suggestion-widget">
+        <form name="suggestions" method="POST" data-netlify="true">
+            <h4 style="font-family: var(--mono-font); font-size: 0.7rem; color: var(--primary-teal); margin: 0 0 10px 0;">[ SUGGESTIONS_FEED ]</h4>
+            <textarea name="message" rows="4" style="width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(0,209,178,0.3); color:#fff; font-family:var(--mono-font); font-size:0.75rem; padding:10px; resize:none; outline:none;" placeholder="Input suggestion..." required></textarea>
+            <button type="submit" style="width:100%; background:transparent; border:1px solid var(--primary-teal); color:var(--primary-teal); font-family:var(--mono-font); font-size:0.7rem; padding:8px; cursor:pointer;">SEND_PACKET</button>
+        </form>
+    </div>
 </body>
 </html>
