@@ -7,6 +7,12 @@
  <language>en-us</language>
  <item>
   <title>Update: No Date</title>
+  <description>After a rigorous 2-day, no-sleep sprint that concluded with an unscheduled nap around 2 PM yesterday, the developer has returned to the keyboard at midnight, ready to tackle tasks. Expect updates fueled by caffeine and sheer willpower.</description>
+  <link>https://brokenitguy.com</link>
+  <guid></guid>
+ </item>
+ <item>
+  <title>Update: No Date</title>
   <description>Began the initial formulation of a new design for the bakers site.</description>
   <link>https://brokenitguy.com</link>
   <guid></guid>
@@ -56,12 +62,6 @@
  <item>
   <title>Update: No Date</title>
   <description>It is 4 AM and the developer has conceded defeat to the current issue for the night. <br> Further attempts will be made tomorrow.</description>
-  <link>https://brokenitguy.com</link>
-  <guid></guid>
- </item>
- <item>
-  <title>Update: No Date</title>
-  <description>The development server has been reset and is being re-initialized. This action was taken due to persistent, unidentified issues preventing functionality.<br>The previous state could not be salvaged.</description>
   <link>https://brokenitguy.com</link>
   <guid></guid>
  </item>
